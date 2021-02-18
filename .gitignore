@@ -74,6 +74,5 @@ out
 public/sitemap/*.xml
 *.pgdump
 .cache.*
-dist
 coverage
 .nyc_output
