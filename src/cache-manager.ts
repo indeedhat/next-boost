@@ -48,7 +48,9 @@ export async function serveCache(
   const payload = { body: null, headers: null }
   if (!rv.stop) {
     payload.body = cache.get('body:' + key)
-    payload.headers = JSON.parse(cache.get('header:' + key).toString())
+    try {
+      payload.headers = JSON.parse(cache.get('header:' + key).toString())
+    } catch (e) {}
   }
   send(payload, res)
 
